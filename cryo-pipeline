@@ -45,7 +45,7 @@ pipeline {
                     env.BUILD_COMMAND = ""
                     def parent_jobname = ""
                     env.TRIGGER_JOB_NAME = ""
-                    if ( "${env.JOB_NAME}".endsWith("-pipeline_polling_trigger") ) {
+                    if ( "${env.JOB_NAME}".endsWith("pipeline_polling_trigger") ) {
                         dir('workdir') {
                           git url: "${env.GIT_REPOSITORY_URL}",
                               branch: "${env.GIT_REPOSITORY_BRANCH}"
