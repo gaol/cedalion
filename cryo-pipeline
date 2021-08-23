@@ -30,10 +30,10 @@ pipeline {
             steps {
                 cleanWs()
                 dir('hera') {
-                  git 'https://github.com/jboss-set/hera.git'
+                  git branch: 'test_polling', url: 'https://github.com/gaol/hera.git'
                 }
                 dir('harmonia') {
-                  git branch: 'test_polling', url: 'https://github.com/gaol/harmonia.git'
+                  git branch: 'test_polling', url: 'https://github.com/gaol/harmonia.git', poll: 'false'
                 }
                 sh "mkdir -p workdir"
                 script {
