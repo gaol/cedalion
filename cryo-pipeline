@@ -133,17 +133,6 @@ pipeline {
               }
             }
         }
-        success {
-            script {
-                if ( "" != env.TRIGGER_JOB_NAME ) {
-                    try {
-                        build wait: false, job: "${env.TRIGGER_JOB_NAME}"
-                    } catch (err) {
-                        echo "[NOTICE] No Job: '${env.TRIGGER_JOB_NAME}' associated to this job, no job triggered"
-                    }
-                }
-            }
-        }
         failure {
             mail to: 'lgao@redhat.com', from: 'lgao@redhat.com',
                 subject: "Build: ${env.JOB_NAME} - Failed",
