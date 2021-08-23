@@ -33,7 +33,7 @@ pipeline {
                   git branch: 'test_polling', url: 'https://github.com/gaol/hera.git'
                 }
                 dir('harmonia') {
-                  git branch: 'test_polling', url: 'https://github.com/gaol/harmonia.git', poll: 'false'
+                  git branch: 'test_polling', url: 'https://github.com/gaol/harmonia.git', poll: false
                 }
                 sh "mkdir -p workdir"
                 script {
