@@ -33,7 +33,7 @@ pipeline {
                   git 'https://github.com/jboss-set/hera.git'
                 }
                 dir('harmonia') {
-                  git branch: 'olympus', url: 'https://github.com/jboss-set/harmonia.git'
+                  git branch: 'test_polling', url: 'https://github.com/gaol/harmonia.git'
                 }
                 sh "mkdir -p workdir"
                 script {
