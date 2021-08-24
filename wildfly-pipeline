@@ -37,6 +37,7 @@ pipeline {
                 dir('harmonia') {
                   git branch: 'set-387', url: 'https://github.com/gaol/harmonia.git'
                 }
+                sh "mkdir -p workdir"
                 script {
                     env.BUILD_COMMAND = "testsuite"
                     echo "BUILD_COMMAND:[${env.BUILD_COMMAND}]"
