@@ -41,6 +41,7 @@ pipeline {
                     env.BUILD_COMMAND = "testsuite"
                     echo "BUILD_COMMAND:[${env.BUILD_COMMAND}]"
                     env.BUILD_SCRIPT = "${env.WORKSPACE}/hera/build-wrapper.sh"
+                    env.HARMONIA_SCRIPT = "eap-job.sh"
                     def parent_jobname = "eap-7.4.x-build"
                     def lastSuccessfulBuildId = lookupLastSuccessfulBuildId(parent_jobname)
                     env.PARENT_JOB_VOLUME = "/home/jenkins/jobs/${parent_jobname}/builds/${lastSuccessfulBuildId}/archive"
