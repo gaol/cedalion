@@ -48,6 +48,7 @@ pipeline {
                 }
                 sh label: '', script: "${env.WORKSPACE}/hera/hera.sh run"
             }
+        }
       stage ('Testsuite') {
             steps {
               script {
@@ -58,7 +59,7 @@ pipeline {
                 }
                 junit "**/target/surefire-reports/*.xml"
                 determineBuildResult()
-            }
+              }
             }
         }
     }
