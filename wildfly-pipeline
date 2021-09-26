@@ -61,7 +61,7 @@ pipeline {
                 }
 
                 dir('harmonia') {
-                  git branch: 'olympus', url: 'https://github.com/jboss-set/harmonia.git', poll: false, changelog: false
+                  git branch: 'jars_list_test', url: 'https://github.com/gaol/harmonia.git', poll: false, changelog: false
                 }
 
                 script {
