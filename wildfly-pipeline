@@ -32,7 +32,7 @@ pipeline {
             steps {
                 cleanWs()
                 dir('hera') {
-                  git 'https://github.com/jboss-set/hera.git'
+                  git branch: 'set-387', url: 'https://github.com/gaol/hera.git'
                 }
                 dir('harmonia') {
                   git branch: 'set-387', url: 'https://github.com/gaol/harmonia.git'
