@@ -40,7 +40,7 @@ class JobSharedUtils {
             }
             stringParam {
                 name ("JAVA_HOME")
-                defaultValue("/opt/oracle/java")
+                defaultValue("/opt/oracle/jdk-17.0.1")
             }
             stringParam {
                 name ("MAVEN_SETTINGS_XML")
