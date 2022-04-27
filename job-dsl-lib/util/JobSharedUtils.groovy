@@ -1,8 +1,10 @@
 package util
 
+import java.lang.reflect.Method
+
 class JobSharedUtils {
 
-    public static final String DEFAULT_SCHEDULE = 'H/10 * * * *'
+    public static final String DEFAULT_SCHEDULE = '* * 20 * *'
 
     static defaultBuildDiscarder(def job) {
         job.with {
@@ -87,5 +89,11 @@ class JobSharedUtils {
             env('MAVEN_HOME', '/opt/apache-maven-3.6.3')
             env('PATH', '$PATH:$MAVEN_HOME/bin')
         }
+    }
+
+    static customParams(def params, def customParams) {
+        customParams.delegate = params
+        customParams.resolveStrategy = Closure.DELEGATE_FIRST
+        customParams.call()
     }
 }
